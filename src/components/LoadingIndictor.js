@@ -26,13 +26,13 @@ const defaultSize = 80
 
 const LoadingIndicator = (props) => {
   const {
-    style: styleProp, 
+    styles: stylesProp, 
     size: sizeProp,
     message,
     ...otherProps
   } = props
 
-  const styles = defaultStyles || styleProp
+  const styles = defaultStyles || stylesProp
   const size = defaultSize || sizeProp
 
   return (
@@ -44,7 +44,7 @@ const LoadingIndicator = (props) => {
         />
         <br />
         <br />
-        <div>{props.message}</div>
+        <div>{message}</div>
       </div>
     </div>
   )

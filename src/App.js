@@ -22,15 +22,15 @@ const App = () => (
         content={<Router 
           history={history}
           routes={[{
-          name: 'Home',
-          path: ['/', '/dashboard'],
-          component: React.lazy(() => import('./pages/dashboard')),
-          icon: React.lazy(() => import('@material-ui/icons/Dashboard')),
-          sideBar: {
-            separatorAbove: false,
-            separatorBelow: true,
-          },
-        },]} 
+            name: 'Home',
+            path: ['/', '/dashboard'],
+            component: React.lazy(() => import('./pages/dashboard')),
+            icon: React.lazy(() => import('@material-ui/icons/Dashboard')),
+            sideBar: {
+              separatorAbove: false,
+              separatorBelow: true,
+            },
+          }]} 
         />}
         footer={<CopyrightFooter />}
       />
