@@ -9,12 +9,12 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import AdminLayout from './layouts/AdminLayout'
 import LoginLayout from './layouts/LoginLayout'
 
-import CopyrightFooter from './partials/CopyrightFooter'
-import Header from './partials/Header'
-import Router from './components/Router'
+import CopyrightFooter from './pieces/CopyrightFooter'
+import Header from './pieces/Header'
+import Router from './bits/Router'
 
-import Login from './components/Login'
-import LanguageSwitcher from './components/LanguageSwitcher'
+import Login from './bits/Login'
+import LanguageSwitcher from './bits/LanguageSwitcher'
 
 const theme = createMuiTheme()
 

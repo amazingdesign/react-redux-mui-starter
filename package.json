@@ -60,7 +60,7 @@
   },
   "bit": {
     "env": {},
-    "componentsDefaultDirectory": "components/{name}",
+    "componentsDefaultDirectory": "bits/{name}",
     "packageManager": "npm"
   }
 }
