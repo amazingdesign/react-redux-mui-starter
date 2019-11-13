@@ -57,5 +57,10 @@
     "eslint-plugin-jest": "^23.0.3",
     "eslint-plugin-react": "^7.16.0",
     "i18next-scanner": "^2.10.3"
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }
