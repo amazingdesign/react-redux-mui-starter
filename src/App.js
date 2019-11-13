@@ -6,6 +6,8 @@ import { store, history } from './store'
 import { ThemeProvider } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
 
+import createValidator from './validator'
+
 import AdminLayout from './layouts/AdminLayout'
 import LoginLayout from './layouts/LoginLayout'
 
@@ -55,7 +57,13 @@ const App = () => {
                       { code: 'en', name: 'Angielski' },
                     ]}
                   />
-                  <Login />
+                  <Login 
+                    createValidator={createValidator}
+                    customErrors={{
+                      email: 'Must be an valid email address!',
+                      password: 'Can not be empty!',
+                    }}
+                  />
                 </div>
               }
             />

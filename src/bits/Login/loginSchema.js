@@ -1,15 +1,13 @@
 import { JSONSchemaBridge } from 'uniforms-bridge-json-schema'
-import { i18n } from '../../i18n'
 
-import { createValidator } from '../../validator'
-
-export default () => {
+export default ({ i18n, createValidator }) => {
   const schema = {
     title: 'Login',
     type: 'object',
     properties: {
       email: {
         type: 'string',
+        format: 'email',
         minLength: 1,
         label: i18n.t('E-mail'),
       },
