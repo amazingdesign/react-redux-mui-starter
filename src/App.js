@@ -12,10 +12,11 @@ import AdminLayout from './layouts/AdminLayout'
 import LoginLayout from './layouts/LoginLayout'
 
 import CopyrightFooter from './pieces/CopyrightFooter'
+import LoginImage from './pieces/LoginImage'
 import Header from './pieces/Header'
-import Router from './bits/Router'
 
 import Login from './bits/Login'
+import Router from './bits/Router'
 import LanguageSwitcher from './bits/LanguageSwitcher'
 
 const theme = createMuiTheme()
@@ -48,8 +49,8 @@ const App = () => {
             />
             :
             <LoginLayout
-              content={
-                <div>
+              header={
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <LanguageSwitcher
                     noLabel={true}
                     languages={[
@@ -57,15 +58,17 @@ const App = () => {
                       { code: 'en', name: 'Angielski' },
                     ]}
                   />
-                  <Login 
-                    createValidator={createValidator}
-                    customErrors={{
-                      email: 'Must be an valid email address!',
-                      password: 'Can not be empty!',
-                    }}
-                  />
                 </div>
               }
+              aside={<LoginImage />}
+              content={<Login
+                createValidator={createValidator}
+                customErrors={{
+                  email: 'Must be an valid email address!',
+                  password: 'Can not be empty!',
+                }}
+              />}
+              footer={<CopyrightFooter />}
             />
         }
       </ThemeProvider>
