@@ -6,24 +6,35 @@
     "@material-ui/core": "^4.6.0",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.6.0",
+    "acorn": "^6.3.0",
+    "ajv": "^6.10.2",
+    "ajv-i18n": "^3.5.0",
     "connected-react-router": "^6.5.2",
     "history": "^4.10.1",
+    "i18next-browser-languagedetector": "^4.0.1",
+    "i18next-xhr-backend": "^3.2.2",
     "mui-layout": "^1.2.9",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-flag-kit": "^0.3.1",
+    "react-i18next": "^11.2.0",
     "react-redux": "^7.1.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uniforms": "^2.6.0",
+    "uniforms-bridge-json-schema": "^2.6.0",
+    "uniforms-material": "^2.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "translations": "i18next-scanner --config ./i18next-scanner/config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +55,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-plugin-jest": "^23.0.3",
-    "eslint-plugin-react": "^7.16.0"
+    "eslint-plugin-react": "^7.16.0",
+    "i18next-scanner": "^2.10.3"
   }
 }

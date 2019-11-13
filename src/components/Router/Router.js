@@ -49,7 +49,7 @@ const Router = ({ routes, history, routeLoader }) => {
 }
 
 Router.propTypes = {
-  history: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired,
   routes: PropTypes.array.isRequired,
   routeLoader: PropTypes.node,
 }

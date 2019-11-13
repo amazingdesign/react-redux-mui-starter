@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 
 const LoginLayout = (props) => (
   <div>
-    LoginLayout
+    {props.content}
   </div>
 )
 
-LoginLayout.propTypes = {}
+LoginLayout.propTypes = {
+  content: PropTypes.node,
+}
 
 export default LoginLayout
