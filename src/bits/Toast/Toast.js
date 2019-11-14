@@ -55,6 +55,7 @@ const Toast = (props) => {
     message,
     onClose,
     variant,
+    onRequestClose,
     autoHideDuration,
     anchorOrigin,
     ...other
@@ -70,7 +71,7 @@ const Toast = (props) => {
       anchorOrigin={anchorOrigin}
       open={true}
       autoHideDuration={autoHideDuration}
-      onClose={onClose}
+      onClose={onRequestClose}
     >
       <SnackbarContent
         className={classes[variant]}
@@ -105,6 +106,7 @@ Toast.propTypes = {
   className: PropTypes.string,
   message: PropTypes.string,
   onClose: PropTypes.func,
+  onRequestClose: PropTypes.func,
   anchorOrigin: PropTypes.object,
   autoHideDuration: PropTypes.number,
   variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,

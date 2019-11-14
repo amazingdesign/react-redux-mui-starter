@@ -7,8 +7,6 @@ import { createBrowserHistory } from 'history'
 import {
   reducer as flashReducer,
   middleware as flashMiddleware,
-  flashMessage,
-  flashErrorMessage,
 } from 'redux-flash'
 
 export const history = createBrowserHistory()

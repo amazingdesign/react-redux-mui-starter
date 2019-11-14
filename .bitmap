@@ -19,7 +19,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/display-flash-toasts@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/display-flash-toasts@0.0.3": {
         "files": [
             {
                 "relativePath": "src/bits/DisplayFlashToasts/DisplayFlashToasts.js",
@@ -90,7 +90,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/login@0.0.3": {
+    "amazingdesign.react-redux-mui-starter/login@0.0.4": {
         "files": [
             {
                 "relativePath": "src/bits/Login/Login.js",
@@ -136,7 +136,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/toast@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/toast@0.0.3": {
         "files": [
             {
                 "relativePath": "src/bits/Toast/Toast.js",

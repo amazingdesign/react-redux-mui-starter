@@ -72,8 +72,8 @@ const App = () => {
               footer={<CopyrightFooter />}
             />
         }
+        <DisplayFlashToasts />
       </ThemeProvider>
-      <DisplayFlashToasts />
     </Provider>
   )
 }
