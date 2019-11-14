@@ -11,3 +11,5 @@ This repo is under heavy development now.
 - [MUI Layout](https://github.com/siriwatknp/mui-layout)
 - [React Router](https://github.com/ReactTraining/react-router)
 - [Connected React Router](https://github.com/supasate/connected-react-router)
+- [react-i18next](https://github.com/i18next/react-i18next)
+- [redux-flash](https://github.com/LaunchPadLab/redux-flash)

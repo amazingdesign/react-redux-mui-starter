@@ -24,6 +24,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
+    "redux-flash": "^2.0.2",
     "redux-thunk": "^2.3.0",
     "uniforms": "^2.6.0",
     "uniforms-bridge-json-schema": "^2.6.0",
