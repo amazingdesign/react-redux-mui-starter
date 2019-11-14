@@ -18,6 +18,7 @@ import Header from './pieces/Header'
 import Login from './bits/Login'
 import Router from './bits/Router'
 import LanguageSwitcher from './bits/LanguageSwitcher'
+import DisplayFlashToasts from './bits/DisplayFlashToasts/'
 
 const theme = createMuiTheme()
 
@@ -72,6 +73,7 @@ const App = () => {
             />
         }
       </ThemeProvider>
+      <DisplayFlashToasts />
     </Provider>
   )
 }

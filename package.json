@@ -60,7 +60,9 @@
     "i18next-scanner": "^2.10.3"
   },
   "bit": {
-    "env": {},
+    "env": {
+      "compiler": "bit.envs/compilers/react@1.0.4"
+    },
     "componentsDefaultDirectory": "bits/{name}",
     "packageManager": "npm"
   }
