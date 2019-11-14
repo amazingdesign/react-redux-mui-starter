@@ -5,7 +5,8 @@ import { AutoForm, AutoField, ErrorField } from 'uniforms-material'
 import { useTranslation } from 'react-i18next'
 
 import createLoginSchema from './loginSchema'
-import DefaultSubmitField from '../DefaultSubmitField/DefaultSubmitField'
+import DefaultSubmitField from '../DefaultSubmitField'
+import DisplayFlashToasts from '../DisplayFlashToasts'
 
 const Login = ({ header, onSubmit, createValidator, customErrors }) => {
   const { t, i18n } = useTranslation()
