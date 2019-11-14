@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Typography } from '@material-ui/core'
+
 import { AutoForm, AutoField, ErrorField } from 'uniforms-material'
 import { useTranslation } from 'react-i18next'
 
 import createLoginSchema from './loginSchema'
 import DefaultSubmitField from '../DefaultSubmitField'
 
-const Login = ({ header, onSubmit, createValidator, customErrors }) => {
+const LoginForm = ({ header, onSubmit, createValidator, customErrors }) => {
   const { t, i18n } = useTranslation()
 
   return (
     <div>
-      <h1>{t(header)}</h1>
+      <Typography variant="h4" gutterBottom={true}>
+        {t(header)}
+      </Typography>
       <AutoForm
         schema={createLoginSchema({ i18n, createValidator })}
         onSubmit={onSubmit}
@@ -33,16 +37,11 @@ const Login = ({ header, onSubmit, createValidator, customErrors }) => {
   )
 }
 
-Login.defaultProps = {
-  header: 'Please login!',
-  onSubmit: console.log,
-}
-
-Login.propTypes = {
+LoginForm.propTypes = {
   header: PropTypes.string,
   customErrors: PropTypes.object,
   onSubmit: PropTypes.func.isRequired,
   createValidator: PropTypes.func.isRequired,
 }
 
-export default Login
+export default LoginForm

@@ -9,7 +9,7 @@ module.exports = {
     '!src/i18n/**',
     '!**/node_modules/**',
   ],
-  output: 'src',
+  output: './',
   options: {
     debug: true,
     removeUnusedKeys: true,
@@ -22,11 +22,13 @@ module.exports = {
     defaultLng: 'en',
     defaultValue: '',
     resource: {
-      loadPath: 'i18n/locales/{{lng}}.json',
-      savePath: 'i18n/locales/{{lng}}.json',
+      loadPath: 'public/locales/{{lng}}.json',
+      savePath: 'public/locales/{{lng}}.json',
       jsonIndent: 2,
       lineEnding: '\n',
     },
+    nsSeparator: false,
+    keySeparator: false,
     interpolation: {
       prefix: '{{',
       suffix: '}}',
