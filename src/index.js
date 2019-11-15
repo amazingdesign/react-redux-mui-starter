@@ -7,6 +7,7 @@ import { store } from './store'
 import { ThemeProvider } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
 
+import LoadingIndicator from './bits/LoadingIndictor'
 
 import './i18n'
 import './index.css'
@@ -29,7 +30,7 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <Suspense fallback={'Loading..'}>
+      <Suspense fallback={<LoadingIndicator />}>
         <App />
       </Suspense>
     </ThemeProvider>
