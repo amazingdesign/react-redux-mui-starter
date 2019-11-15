@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import { useDispatch, useSelector } from 'react-redux'
+import restServices from '../db/restServices'
 
 import AdminLayout from '../bits/AdminLayout'
 
@@ -16,6 +19,38 @@ const headerProps = {
 }
 
 const Admin = (props) => {
+  const dispatch = useDispatch()
+  const coursesData = useSelector(state => state.courses.find.data)
+  const coursesRows = coursesData && coursesData.rows
+
+  const courseRoutes = (
+    coursesRows &&
+    coursesRows.map(course => ({
+      type: 'group',
+      name: course.name,
+      key: course._id,
+      path: `/course/${course._id}`,
+      component: React.lazy(() => import('../pages/course')),
+      icon: 'play_circle_outline',
+      routes: (
+        course.lessons &&
+        course.lessons.map(lesson => ({
+          name: lesson.name,
+          key: lesson.id,
+          path: `/lesson/${lesson.id}`,
+          component: React.lazy(() => import('../pages/lesson')),
+          icon: 'play_circle_filled',
+        }))
+      ),
+    }))
+  ) || []
+
+  console.log(courseRoutes)
+
+  useEffect(() => {
+    dispatch(restServices.actions.courses.find())
+  }, [])
+
   const profileMenuRoutes = [
     {
       name: 'Home',
@@ -46,7 +81,8 @@ const Admin = (props) => {
         below: false,
       },
     },
-  ]
+  ].concat(courseRoutes)
+
   const mainMenuRoutes = profileMenuRoutes
   const routes = profileMenuRoutes
 

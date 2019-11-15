@@ -11,7 +11,10 @@ const AvatarDropdown = (props) => {
 
   return (
     <>
-      <Button color="inherit" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button
+        color={'inherit'}
+        onClick={handleClick}
+      >
         <Avatar
           src={props.src}
           {...props.avatarProps}
@@ -20,9 +23,7 @@ const AvatarDropdown = (props) => {
       {
         Array.isArray(props.children) ?
           <Menu
-            id="simple-menu"
             anchorEl={anchorEl}
-            keepMounted
             open={Boolean(anchorEl)}
             onClose={handleClose}
             {...props.menuProps}
@@ -39,11 +40,9 @@ const AvatarDropdown = (props) => {
             props.children,
             {
               onClick: handleClose,
-              id: 'simple-menu',
-              anchorEl: anchorEl,
-              keepMounted: true,
-              open: Boolean(anchorEl),
               onClose: handleClose,
+              anchorEl: anchorEl,
+              open: Boolean(anchorEl),
               ...props.menuProps,
             }
           )

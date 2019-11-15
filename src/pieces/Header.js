@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core'
 
 import AvatarDropdown from '../bits/AvatarDropdown'
 
-import NavList from './NavList'
+import NavList from '../bits/NavList'
 
 const Header = ({ routes }) => (
   <>
@@ -16,6 +16,7 @@ const Header = ({ routes }) => (
       <NavList 
         items={routes}
         isMenu={true}
+        isNestedMenu={true}
       />
     </AvatarDropdown>
   </>

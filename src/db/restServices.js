@@ -11,6 +11,15 @@ export const restServices = makeRestServices(
       onReceivesData: (...all) => console.log('I am onReceivesData callback!', ...all),
       actionsDeclarations: crudActionsDeclarations,
     },
+    {
+      name: 'courses',
+      url: 'https://collections.amazingcms.amazingdesign.eu/api/actions/courses/:id',
+      onError: (...all) => console.log('I am onError callback!', ...all),
+      onStartFetching: (...all) => console.log('I am onStartFetching callback!', ...all),
+      onStopFetching: (...all) => console.log('I am onStopFetching callback!', ...all),
+      onReceivesData: (...all) => console.log('I am onReceivesData callback!', ...all),
+      actionsDeclarations: crudActionsDeclarations,
+    },
   ]
 )
 

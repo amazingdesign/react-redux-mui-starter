@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { List } from '@material-ui/core'
 
-import NavList from './NavList'
+import NavList from '../bits/NavList'
 
 const styles = {
   list: {
@@ -15,7 +15,7 @@ const Nav = ({ routes, setOpened }) => (
   <List style={styles.list}>
     <NavList
       items={routes}
-      onClick={() => setOpened && setOpened(true)}
+      onClick={() => setOpened && setOpened(false)}
     />
   </List>
 )

@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import { ListItem as MUIListItem, ListItemIcon, Icon, ListItemText } from '@material-ui/core'
 
 // eslint-disable-next-line react/prop-types
-const ListItemInner = ({ icon, label, onClick }, ref) => (
+const ListItemInner = ({ icon, label, onClick, children, ...otherProps }, ref) => (
   <MUIListItem
     ref={ref}
     button={true}
-    onClick={onClick
-    }
+    onClick={onClick}
+    {...otherProps}
   >
     {
       icon ?
@@ -21,8 +21,12 @@ const ListItemInner = ({ icon, label, onClick }, ref) => (
     }
     <ListItemText
       primary={label}
-      primaryTypographyProps={{ noWrap: true }}
+      primaryTypographyProps={{
+        noWrap: true,
+        component: 'p',
+      }}
     />
+    {children}
   </MUIListItem >
 )
 
@@ -32,6 +36,7 @@ ListItem.propTypes = {
   icon: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
+  children: PropTypes.node,
 }
 
 export default ListItem
