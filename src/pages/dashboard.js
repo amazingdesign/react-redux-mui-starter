@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const dashboard = (props) => (
+const DashboardPage = (props) => (
   <div>
     DASHBOARD
   </div>
 )
 
-dashboard.propTypes = {}
+DashboardPage.propTypes = {}
 
-export default dashboard
+export default DashboardPage

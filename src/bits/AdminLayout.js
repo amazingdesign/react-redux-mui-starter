@@ -16,32 +16,38 @@ import {
 
 const config = presets.createStandardLayout()
 
-const AdminLayout = ({ header, nav, content, footer }) => (
+const AdminLayout = (props) => (
   <Root config={config}>
     <Header
       renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
+      {...props.headerProps}
     >
-      {header}
+      {props.header}
     </Header>
     <Nav
       renderIcon={collapsed => collapsed ? <ChevronRight /> : <ChevronLeft />}
+      {...props.navProps}
     >
-      {nav}
+      {props.nav}
     </Nav>
-    <Content>
-      {content}
+    <Content {...props.contentProps}>
+      {props.content}
     </Content>
-    <Footer>
-      {footer}
+    <Footer {...props.footerProps}>
+      {props.footer}
     </Footer>
   </Root>
 )
 
 AdminLayout.propTypes = {
   header: PropTypes.node,
-  nav: PropTypes.node,
+  nav: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   content: PropTypes.node,
   footer: PropTypes.node,
+  headerProps: PropTypes.object,
+  navProps: PropTypes.object,
+  contentProps: PropTypes.object,
+  footerProps: PropTypes.object,
 }
 
 export default AdminLayout

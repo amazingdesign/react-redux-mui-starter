@@ -25,10 +25,19 @@ const makeRoutes = (routes) => {
     />
   )
 
+  const deleteInvalidOrExternalRoutes = (route) => (
+    !route.link &&
+    route.name &&
+    route.path &&
+    route.component
+  )
+
   return (
     routes &&
-    routes.map &&
-    routes.map(makeRouteOrRoutes)
+    Array.isArray(routes) &&
+    routes
+      .filter(deleteInvalidOrExternalRoutes)
+      .map(makeRouteOrRoutes)
   )
 }
 
