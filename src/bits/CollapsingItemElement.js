@@ -12,16 +12,8 @@ const CollapsingItemElement = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const handleClose = () => setAnchorEl(null)
 
-  const [isOpen, setIsOpen] = useState(false)
-
   const ItemElement = props.isMenu ? MenuItem : ListItem
-  const IconElement = isOpen ? ExpandLess : ExpandMore
-
-  const toggleCollapse = (e) => {
-    setAnchorEl(e.currentTarget)
-    e.stopPropagation()
-    setIsOpen(!isOpen)
-  }
+  const IconElement = props.isOpen ? ExpandLess : ExpandMore
 
   return (
     <>
@@ -30,31 +22,34 @@ const CollapsingItemElement = (props) => {
         label={props.label}
         onClick={(e) => {
           props.onClick && props.onClick(e)
-          toggleCollapse(e)
+          props.toggleCollapse(e)
         }}
         {...props.itemProps}
       >
         <IconElement
-          onClick={toggleCollapse}
+          onClick={props.toggleCollapse}
           {...props.iconProps}
         />
       </ItemElement>
       {
         <Collapse
-          in={isOpen}
+          in={props.isOpen}
           timeout={'auto'}
           unmountOnExit={true}
           {...props.collapseProps}
         >
           {
-            React.cloneElement(
-              props.children,
-              {
-                anchorEl: anchorEl,
-                open: Boolean(anchorEl),
-                onClose: handleClose,
-              }
-            )
+            props.isMenu ?
+              React.cloneElement(
+                props.children,
+                {
+                  anchorEl: anchorEl,
+                  open: Boolean(anchorEl),
+                  onClose: handleClose,
+                }
+              )
+              :
+              props.children
           }
         </Collapse>
 
@@ -64,6 +59,8 @@ const CollapsingItemElement = (props) => {
 }
 
 CollapsingItemElement.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  toggleCollapse: PropTypes.func.isRequired,
   onClick: PropTypes.func,
   isMenu: PropTypes.bool,
   icon: PropTypes.string,
