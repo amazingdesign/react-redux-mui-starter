@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 import { List } from '@material-ui/core'
 
-import NavList from '../bits/NavList'
+import NavList from '../NavList'
 
 const styles = {
   list: {

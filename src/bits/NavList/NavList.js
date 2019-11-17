@@ -57,7 +57,7 @@ NavList.propTypes = {
   isNestedMenu: PropTypes.bool,
   activeRouteChecker: PropTypes.func,
   containsActiveRouteChecker: PropTypes.func,
-  routes: routesPropType.isRequired,
+  routes: routesPropType,
   currentPath: PropTypes.string.isRequired,
 }
 

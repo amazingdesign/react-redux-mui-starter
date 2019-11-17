@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'connected-react-router'
 
 import DefaultRouteLoader from './DefaultRouteLoader'
+import { routesPropType } from '../NavList'
 
 const makeRoutes = (routes) => {
   const makeRouteOrRoutes = (route) => (
@@ -59,7 +60,7 @@ const Router = ({ routes, history, routeLoader }) => {
 
 Router.propTypes = {
   history: PropTypes.object.isRequired,
-  routes: PropTypes.array.isRequired,
+  routes: routesPropType,
   routeLoader: PropTypes.node,
 }
 

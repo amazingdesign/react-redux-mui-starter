@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next'
 import LanguageSelect from '../LanguageSelect'
 
 const LanguageSwitcher = ({ languages, ...restOfProps }) => {
-  const { i18n } = useTranslation('translation')
+  const { i18n } = useTranslation()
 
-  const [currentLang, setCurrentLang] = useState(i18n.language)
+  const [currentLang, setCurrentLang] = useState(i18n.language.slice(0, 2))
 
   const onLanguageChange = (event) => {
     const chosenLanguage = event.target.value

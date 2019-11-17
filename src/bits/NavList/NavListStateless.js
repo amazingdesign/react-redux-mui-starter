@@ -102,7 +102,7 @@ NavListStateless.propTypes = {
   itemProps: PropTypes.object,
   linkProps: PropTypes.object,
   isNestedMenu: PropTypes.bool,
-  routes: routesPropType.isRequired,
+  routes: routesPropType,
   toggleCollapse: PropTypes.func.isRequired,
 }
 
