@@ -41,7 +41,7 @@ const NavListStateless = ({
         routes &&
         routes.map(route => {
           const to = route.link || (Array.isArray(route.path) ? route.path[0] : route.path)
-          const LinkElement = route.link ? Link : ConnectedLink
+          const LinkElement = to ? route.link ? Link : ConnectedLink : 'div'
           const reactKey = route.key
 
           return (
@@ -61,7 +61,7 @@ const NavListStateless = ({
                 >
                   <NavListStateless
                     routes={route.routes}
-                    onClick={onClick}
+                    // onClick={onClick}
                     isMenu={Boolean(isNestedMenu)}
                     isNestedMenu={isNestedMenu}
                     itemProps={itemProps}
@@ -80,7 +80,10 @@ const NavListStateless = ({
                   <ItemElement
                     icon={route.icon}
                     label={route.name}
-                    onClick={onClick}
+                    onClick={(...all) => {
+                      route.onClick && route.onClick(...all)
+                      onClick && onClick(...all)
+                    }}
                     selected={route.isSelected}
                     {...itemProps}
                   />

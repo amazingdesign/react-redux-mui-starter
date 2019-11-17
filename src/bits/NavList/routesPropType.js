@@ -16,6 +16,7 @@ export const routesPropType = PropTypes.arrayOf(
     routes: PropTypes.array,
     isSelected: PropTypes.bool,
     isOpen: PropTypes.bool,
+    onClick: PropTypes.func,
   }),
 )
 
