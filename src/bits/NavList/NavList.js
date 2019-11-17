@@ -25,7 +25,7 @@ const NavList = ({
   )
   useEffect(() => {
     const newRouteItems = transformRoutes(routeItems)
-    if (JSON.stringify(newRouteItems) == JSON.stringify(routeItems)) return
+    if (JSON.stringify(newRouteItems) === JSON.stringify(routeItems)) return
     setRouteItems(newRouteItems)
   }, [currentPath, routeItems])
 
