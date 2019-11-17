@@ -3,7 +3,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { history } from './store'
 import { logOutAsyncAction, logInAsyncAction, checkIfLoggedInAsyncAction } from './state/auth'
-import restServices from './db/restServices'
+
+import { useTranslation } from 'react-i18next'
 
 import DisplayFlashToasts from './bits/DisplayFlashToasts/'
 
@@ -23,13 +24,9 @@ const theme = {
   },
 }
 
-const languages = [
-  { code: 'pl', name: 'Polski' },
-  { code: 'en', name: 'Angielski' },
-]
-
 const App = () => {
   const dispatch = useDispatch()
+  const { t } = useTranslation(null, { useSuspense: false })
 
   const onLoginFormSubmit = ({ email, password }) => dispatch(logInAsyncAction(email, password))
 
@@ -41,9 +38,14 @@ const App = () => {
     dispatch(checkIfLoggedInAsyncAction())
   }, [])
 
+  const languages = [
+    { code: 'pl', name: t('Polish') },
+    { code: 'en', name: t('English') },
+  ]
+
   const routes = [
     {
-      name: 'Home',
+      name: t('Home'),
       path: ['/', '/dashboard'],
       component: React.lazy(() => import('./pages/dashboard')),
       icon: 'dashboard',
@@ -53,7 +55,7 @@ const App = () => {
       },
     },
     {
-      name: 'Profile',
+      name: t('Profile'),
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
       icon: 'people',
@@ -63,7 +65,7 @@ const App = () => {
       },
     },
     {
-      name: 'Google',
+      name: t('Google'),
       link: 'https://google.com',
       icon: 'search',
       separator: {
@@ -75,7 +77,7 @@ const App = () => {
 
   const profileMenuRoutes = [
     {
-      name: 'Profile',
+      name: t('Profile'),
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
       icon: 'people',
@@ -85,7 +87,7 @@ const App = () => {
       },
     },
     {
-      name: 'Logout',
+      name: t('Logout'),
       icon: 'logout',
       onClick: () => dispatch(logOutAsyncAction()),
       separator: {

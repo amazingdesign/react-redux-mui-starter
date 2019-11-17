@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
 const DefaultSubmitField = (props) => {
-  const { t } = useTranslation('translation')
+  const { t } = useTranslation()
 
   return (
     <Button
