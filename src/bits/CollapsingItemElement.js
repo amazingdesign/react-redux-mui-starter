@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Collapse } from '@material-ui/core'
@@ -10,31 +10,37 @@ import ListItem from './ListItem'
 
 const CollapsingItemElement = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
-  const handleClose = () => setAnchorEl(null)
+
+  const handleClick = (e) => {
+    props.onClick && props.onClick(e)
+    setAnchorEl(e.currentTarget)
+    props.toggleCollapse(e)
+  }
+  const handleClose = (e) => {
+    setAnchorEl(null)
+    props.toggleCollapse(e)
+  }
+
+  const isOpen = props.isMenu ? Boolean(anchorEl) : props.isOpen
 
   const ItemElement = props.isMenu ? MenuItem : ListItem
-  const IconElement = props.isOpen ? ExpandLess : ExpandMore
+  const IconElement = isOpen ? ExpandLess : ExpandMore
 
   return (
     <>
       <ItemElement
         icon={props.icon}
         label={props.label}
-        onClick={(e) => {
-          props.onClick && props.onClick(e)
-          props.toggleCollapse(e)
-        }}
+        onClick={handleClick}
         {...props.itemProps}
       >
         <IconElement
-          onClick={props.toggleCollapse}
           {...props.iconProps}
         />
       </ItemElement>
       {
         <Collapse
-          in={props.isOpen}
-          timeout={'auto'}
+          in={isOpen}
           unmountOnExit={true}
           {...props.collapseProps}
         >

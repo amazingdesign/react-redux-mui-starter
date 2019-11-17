@@ -16,7 +16,7 @@ const Header = ({ routes }) => {
     <>
       <Typography variant={'h6'} noWrap={true} style={{ flexGrow: 1 }}>
         react-redux-mui-starter
-    </Typography>
+      </Typography>
       <AvatarDropdown>
         <NavList
           currentPath={currentPath}
