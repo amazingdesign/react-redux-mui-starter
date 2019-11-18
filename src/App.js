@@ -37,15 +37,14 @@ const App = () => {
   const onForgottenPassSubmit = ({ email }) => dispatch(sendForgotPasswordEmailAsyncAction(email))
 
   const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn)
-
   const userAvatarSrc = useSelector((state) => state.auth && state.auth.userData && state.auth.userData.avatar)
+  const routeFromDb = useSelector((state) => state.routeFromDb.get.data)
 
   useEffect(() => {
     dispatch(checkIfLoggedInAsyncAction())
+    dispatch(restServices.actions.routeFromDb.get())
     // eslint-disable-next-line
   }, [])
-
-  window.f = () => dispatch(restServices.actions.courses.find())
 
   const languages = [
     { code: 'pl', name: t('Polish') },
@@ -58,31 +57,21 @@ const App = () => {
       path: ['/', '/dashboard'],
       component: React.lazy(() => import('./pages/dashboard')),
       icon: 'dashboard',
-      separator: {
-        above: false,
-        below: false,
-      },
     },
     {
       name: t('Profile'),
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
       icon: 'people',
-      separator: {
-        above: false,
-        below: true,
-      },
+      separator: { below: true },
     },
     {
       name: t('Google'),
       link: 'https://google.com',
       icon: 'search',
-      separator: {
-        above: false,
-        below: true,
-      },
+      separator: { below: true },
     },
-  ]
+  ].concat(routeFromDb || [])
 
   const profileMenuRoutes = [
     {
@@ -90,19 +79,12 @@ const App = () => {
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
       icon: 'people',
-      separator: {
-        above: false,
-        below: true,
-      },
+      separator: { below: true },
     },
     {
       name: t('Logout'),
       icon: 'logout',
       onClick: () => dispatch(logOutAsyncAction()),
-      separator: {
-        above: false,
-        below: false,
-      },
     },
   ]
 

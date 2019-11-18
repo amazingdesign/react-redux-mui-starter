@@ -6,8 +6,11 @@ import { i18n } from './i18n'
 import { makeReduxAuth } from './bits/makeReduxAuth'
 import { makeAuthRequests } from './bits/makeAuthRequests'
 
-const LOG_IN_URL = 'https://core.amazingcms.amazingdesign.eu/api/auth/logIn'
-const REFRESH_TOKEN_URL = 'https://core.amazingcms.amazingdesign.eu/api/auth/refreshToken'
+// eslint-disable-next-line max-len
+const LOG_IN_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAzcNJI738MJY7v8xHJaBqJnurh2rua2v8'
+const REFRESH_TOKEN_URL = 'https://securetoken.googleapis.com/v1/token?key=AIzaSyAzcNJI738MJY7v8xHJaBqJnurh2rua2v8'
+// eslint-disable-next-line max-len
+const FORGOT_PASSWORD_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAzcNJI738MJY7v8xHJaBqJnurh2rua2v8'
 
 const t = i18n.t.bind(i18n)
 
@@ -21,9 +24,17 @@ export const {
   checkIfLoggedIn,
   sendForgotPasswordEmail,
 } = makeAuthRequests({
-  loginRequestFunction: (email, password) => axios.post(LOG_IN_URL, { email, password }),
-  refreshTokenRequestFunction: (refreshToken) => axios.post(REFRESH_TOKEN_URL, { refreshToken }),
-  forgotPasswordRequestFunction: (email) => Promise.resolve(),
+  loginRequestFunction: (email, password) => (
+    axios
+      .post(LOG_IN_URL, { email, password, returnSecureToken: 'true' })
+      .then(({ data }) => ({ data: { accessToken: data.idToken, refreshToken: data.refreshToken } }))
+  ),
+  refreshTokenRequestFunction: (refreshToken) => (
+    axios
+      .post(REFRESH_TOKEN_URL, { grant_type: 'refresh_token', refresh_token: refreshToken })
+      .then(({ data }) => ({ data: { accessToken: data.id_token, refreshToken: data.refresh_token } }))
+  ),
+  forgotPasswordRequestFunction: (email) => axios.post(FORGOT_PASSWORD_URL, { email, requestType: 'PASSWORD_RESET' }),
 })
 
 export const {
