@@ -6,8 +6,9 @@ import {
   logOutAsyncAction,
   logInAsyncAction,
   checkIfLoggedInAsyncAction,
-  sendForgotPasswordEmailAsyncAction
+  sendForgotPasswordEmailAsyncAction,
 } from './state/auth'
+import restServices from './db/restServices'
 
 import { useTranslation } from 'react-i18next'
 
@@ -43,6 +44,8 @@ const App = () => {
     dispatch(checkIfLoggedInAsyncAction())
     // eslint-disable-next-line
   }, [])
+
+  window.f = () => dispatch(restServices.actions.courses.find())
 
   const languages = [
     { code: 'pl', name: t('Polish') },
