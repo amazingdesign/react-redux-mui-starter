@@ -294,6 +294,30 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "amazingdesign.react-redux-mui-starter/make-auth-requests@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/bits/makeAuthRequests.js",
+                "test": false,
+                "name": "makeAuthRequests.js"
+            }
+        ],
+        "mainFile": "src/bits/makeAuthRequests.js",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "amazingdesign.react-redux-mui-starter/make-redux-auth@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/bits/makeReduxAuth.js",
+                "test": false,
+                "name": "makeReduxAuth.js"
+            }
+        ],
+        "mainFile": "src/bits/makeReduxAuth.js",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "amazingdesign.react-redux-mui-starter/menu-item@0.0.2": {
         "files": [
             {

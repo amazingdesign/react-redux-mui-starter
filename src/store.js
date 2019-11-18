@@ -6,8 +6,8 @@ import { createBrowserHistory } from 'history'
 
 import { reducer as flashReducer, middleware as flashMiddleware } from 'redux-flash'
 
-import { reducer as authReducer } from './state/auth'
-import { restServices } from './db/restServices'
+import { reducer as authReducer } from './auth'
+import { restServices } from './restServices'
 
 export const history = createBrowserHistory()
 const routerReducer = connectRouter(history)

@@ -7,8 +7,8 @@ import {
   logInAsyncAction,
   checkIfLoggedInAsyncAction,
   sendForgotPasswordEmailAsyncAction,
-} from './state/auth'
-import restServices from './db/restServices'
+} from './auth'
+import { restServices } from './restServices'
 
 import { useTranslation } from 'react-i18next'
 
