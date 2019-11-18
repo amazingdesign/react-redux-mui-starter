@@ -7,7 +7,6 @@ import { logOutAsyncAction, logInAsyncAction, checkIfLoggedInAsyncAction } from 
 import { useTranslation } from 'react-i18next'
 
 import DisplayFlashToasts from './bits/DisplayFlashToasts/'
-
 import Kit from './bits/Kit'
 
 import CopyrightFooter from './pieces/CopyrightFooter'
