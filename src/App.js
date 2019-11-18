@@ -42,9 +42,12 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkIfLoggedInAsyncAction())
-    dispatch(restServices.actions.routeFromDb.get())
     // eslint-disable-next-line
   }, [])
+  useEffect(() => {
+    if(isUserLoggedIn) dispatch(restServices.actions.routeFromDb.get())
+    // eslint-disable-next-line
+  }, [isUserLoggedIn])
 
   const languages = [
     { code: 'pl', name: t('Polish') },

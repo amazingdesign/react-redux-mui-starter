@@ -10,7 +10,7 @@ axios.interceptors.request.use(
 
     if (accessToken) {
       // config.headers['Authorization'] = `Bearer ${ accessToken }`
-      if(!config.params) config.params = {}
+      if (!config.params) config.params = {}
       config.params['auth'] = accessToken
     }
 
@@ -28,11 +28,12 @@ const refreshAuthLogic = failedRequest => {
       const accessToken = getAccessToken()
 
       // failedRequest.response.config.headers['Authorization'] = 'Bearer ' + accessToken
-      if(!failedRequest.response.config.params) failedRequest.response.config.params = {}
+      if (!failedRequest.response.config.params) failedRequest.response.config.params = {}
       failedRequest.response.config.params['auth'] = accessToken
 
       return failedRequest
     })
+    .catch((error) => failedRequest)
 }
 
 createAuthRefreshInterceptor(axios, refreshAuthLogic)
