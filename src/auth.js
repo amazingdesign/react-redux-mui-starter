@@ -7,10 +7,10 @@ import { makeReduxAuth } from './bits/makeReduxAuth'
 import { makeAuthRequests } from './bits/makeAuthRequests'
 
 // eslint-disable-next-line max-len
-const LOG_IN_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAzcNJI738MJY7v8xHJaBqJnurh2rua2v8'
-const REFRESH_TOKEN_URL = 'https://securetoken.googleapis.com/v1/token?key=AIzaSyAzcNJI738MJY7v8xHJaBqJnurh2rua2v8'
+const LOG_IN_URL = window._env_.REACT_APP_LOG_IN_URL 
+const REFRESH_TOKEN_URL = window._env_.REACT_APP_REFRESH_TOKEN_URL 
 // eslint-disable-next-line max-len
-const FORGOT_PASSWORD_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAzcNJI738MJY7v8xHJaBqJnurh2rua2v8'
+const FORGOT_PASSWORD_URL = window._env_.REACT_APP_FORGOT_PASSWORD_URL 
 
 const t = i18n.t.bind(i18n)
 

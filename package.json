@@ -36,8 +36,9 @@
     "uniforms-material": "^2.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "chmod +x ./env.sh && ./env.sh && react-scripts start",
+    "build": "chmod +x ./env.sh && ./env.sh && react-scripts build",
+    "build:no-env": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "translations": "i18next-scanner --config ./i18next-scanner/config.js"
