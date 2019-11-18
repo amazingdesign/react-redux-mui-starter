@@ -35,6 +35,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkIfLoggedInAsyncAction())
+    // eslint-disable-next-line
   }, [])
 
   const languages = [

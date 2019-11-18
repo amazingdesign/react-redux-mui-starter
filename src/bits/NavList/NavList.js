@@ -21,12 +21,14 @@ const NavList = ({
 
   useEffect(
     () => { setRouteItems(transformRoutes(routes)) },
+    // eslint-disable-next-line
     [routes]
   )
   useEffect(() => {
     const newRouteItems = transformRoutes(routeItems)
     if (JSON.stringify(newRouteItems) === JSON.stringify(routeItems)) return
     setRouteItems(newRouteItems)
+    // eslint-disable-next-line
   }, [currentPath, routeItems])
 
   const toggleCollapse = (clickedRouteKey) => {
