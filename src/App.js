@@ -2,7 +2,12 @@ import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { history } from './store'
-import { logOutAsyncAction, logInAsyncAction, checkIfLoggedInAsyncAction } from './state/auth'
+import {
+  logOutAsyncAction,
+  logInAsyncAction,
+  checkIfLoggedInAsyncAction,
+  sendForgotPasswordEmailAsyncAction
+} from './state/auth'
 
 import { useTranslation } from 'react-i18next'
 
@@ -27,7 +32,8 @@ const App = () => {
   const dispatch = useDispatch()
   const { t } = useTranslation(null, { useSuspense: false })
 
-  const onLoginFormSubmit = ({ email, password }) => dispatch(logInAsyncAction(email, password))
+  const onLoginSubmit = ({ email, password }) => dispatch(logInAsyncAction(email, password))
+  const onForgottenPassSubmit = ({ email }) => dispatch(sendForgotPasswordEmailAsyncAction(email))
 
   const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn)
 
@@ -102,7 +108,8 @@ const App = () => {
       theme={theme}
       languages={languages}
       isUserLoggedIn={isUserLoggedIn}
-      onLoginFormSubmit={onLoginFormSubmit}
+      onLoginSubmit={onLoginSubmit}
+      onForgottenPassSubmit={onForgottenPassSubmit}
 
       history={history}
       profileMenuRoutes={profileMenuRoutes}

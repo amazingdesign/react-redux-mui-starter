@@ -14,8 +14,8 @@ import Router from '../Router'
 import Header from './Header'
 import Nav from './Nav'
 
+import LoginAndForgottenPassForm from '../LoginAndForgottenPassForm'
 import DefaultLoginLayout from '../LoginLayout'
-import LoginForm from '../LoginForm'
 
 import { createValidator as createDefaultValidator } from './defaultValidator'
 
@@ -82,14 +82,10 @@ const Kit = (props) => {
               }
               aside={props.loginAside}
               content={
-                <LoginForm
-                  header={'Please login!'}
-                  onSubmit={props.onLoginFormSubmit}
+                <LoginAndForgottenPassForm
+                  onLoginSubmit={props.onLoginSubmit}
+                  onForgottenPassSubmit={props.onForgottenPassSubmit}
                   createValidator={props.createValidator || createDefaultValidator}
-                  customErrors={{
-                    email: 'Must be an valid email address!',
-                    password: 'Can not be empty!',
-                  }}
                   {...props.loginFormProps}
                 />
               }
@@ -118,7 +114,8 @@ Kit.propTypes = {
   theme: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
   isUserLoggedIn: PropTypes.bool.isRequired,
-  onLoginFormSubmit: PropTypes.func.isRequired,
+  onLoginSubmit: PropTypes.func.isRequired,
+  onForgottenPassSubmit: PropTypes.func.isRequired,
   languages: PropTypes.arrayOf(PropTypes.exact({
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

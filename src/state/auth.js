@@ -20,7 +20,7 @@ const USER_IS_LOGGING_IN = 'auth/USER_IS_LOGGING_IN'
 const USER_LOGIN_FAILURE = 'auth/USER_LOGIN_FAILURE'
 
 export const sendForgotPasswordEmailAsyncAction = email => dispatch => {
-  dispatch(flashMessage(t('Sending email in progress ...')))
+  dispatch(flashMessage(t('Sending email in progress')))
   sendForgotPasswordEmail(email)
     .then(() => dispatch(flashSuccessMessage(t('E-mail with instructions was sent!'))))
     .catch(err => {
