@@ -31,9 +31,9 @@
     "redux-rest-services": "0.0.3",
     "redux-thunk": "^2.3.0",
     "tinycolor2": "^1.4.1",
-    "uniforms": "^2.6.1",
-    "uniforms-bridge-json-schema": "^2.6.1",
-    "uniforms-material": "^2.6.1"
+    "uniforms": "2.5.0",
+    "uniforms-bridge-json-schema": "2.5.0",
+    "uniforms-material": "2.5.0"
   },
   "scripts": {
     "start": "chmod +x ./env.sh && ./env.sh && react-scripts start",
