@@ -5,6 +5,7 @@ export const routesPropType = PropTypes.arrayOf(
     type: PropTypes.string,
     key: PropTypes.string,
     name: PropTypes.string.isRequired,
+    pathWithParams: PropTypes.string,
     path: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.object]),
     icon: PropTypes.string,

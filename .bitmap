@@ -85,7 +85,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/forgotten-pass-form@0.0.1": {
+    "amazingdesign.react-redux-mui-starter/forgotten-pass-form@0.0.2": {
         "files": [
             {
                 "relativePath": "src/bits/ForgottenPassForm/ForgottenPassForm.js",
@@ -131,7 +131,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/kit@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/kit@0.0.4": {
         "files": [
             {
                 "relativePath": "src/bits/Kit/Header.js",
@@ -241,7 +241,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/login-and-forgotten-pass-form@0.0.1": {
+    "amazingdesign.react-redux-mui-starter/login-and-forgotten-pass-form@0.0.2": {
         "files": [
             {
                 "relativePath": "src/bits/LoginAndForgottenPassForm/LoginAndForgottenPassForm.js",
@@ -271,7 +271,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/login@0.0.8": {
+    "amazingdesign.react-redux-mui-starter/login@0.0.9": {
         "files": [
             {
                 "relativePath": "src/bits/LoginForm/LoginForm.js",
@@ -330,7 +330,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/nav-list@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/nav-list@0.0.4": {
         "files": [
             {
                 "relativePath": "src/bits/NavList/NavList.js",
@@ -373,7 +373,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/router@0.0.5": {
+    "amazingdesign.react-redux-mui-starter/router@0.0.7": {
         "files": [
             {
                 "relativePath": "src/bits/Router/DefaultRouteLoader.js",
