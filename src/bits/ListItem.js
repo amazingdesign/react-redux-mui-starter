@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { ListItem as MUIListItem, ListItemIcon, Icon, ListItemText } from '@material-ui/core'
+import { ListItem as MUIListItem, ListItemIcon, ListItemText } from '@material-ui/core'
+
+import Icon from './Icon'
 
 // eslint-disable-next-line react/prop-types
 const ListItemInner = ({ icon, label, onClick, children, ...otherProps }, ref) => (

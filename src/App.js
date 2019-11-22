@@ -65,13 +65,13 @@ const App = () => {
       name: t('Profile'),
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
-      icon: 'people',
+      icon: 'fas fa-users',
       separator: { below: true },
     },
     {
       name: t('Google'),
       link: 'https://google.com',
-      icon: 'search',
+      icon: 'fab fa-google',
       separator: { below: true },
     },
   ].concat(routeFromDb || [])
@@ -81,7 +81,7 @@ const App = () => {
       name: t('Profile'),
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
-      icon: 'people',
+      icon: 'fas fa-users',
       separator: { below: true },
     },
     {

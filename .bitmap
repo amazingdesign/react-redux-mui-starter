@@ -25,7 +25,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/collapsing-item-element@0.0.1": {
+    "amazingdesign.react-redux-mui-starter/collapsing-item-element@0.0.3": {
         "files": [
             {
                 "relativePath": "src/bits/CollapsingItemElement.js",
@@ -131,7 +131,19 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/kit@0.0.4": {
+    "amazingdesign.react-redux-mui-starter/icon@0.2.0": {
+        "files": [
+            {
+                "relativePath": "src/bits/Icon.js",
+                "test": false,
+                "name": "Icon.js"
+            }
+        ],
+        "mainFile": "src/bits/Icon.js",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "amazingdesign.react-redux-mui-starter/kit@0.0.6": {
         "files": [
             {
                 "relativePath": "src/bits/Kit/Header.js",
@@ -217,7 +229,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/list-item@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/list-item@0.1.1": {
         "files": [
             {
                 "relativePath": "src/bits/ListItem.js",
@@ -318,7 +330,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/menu-item@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/menu-item@0.1.1": {
         "files": [
             {
                 "relativePath": "src/bits/MenuItem.js",
@@ -330,7 +342,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/nav-list@0.0.4": {
+    "amazingdesign.react-redux-mui-starter/nav-list@0.0.6": {
         "files": [
             {
                 "relativePath": "src/bits/NavList/NavList.js",
@@ -373,7 +385,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/router@0.0.7": {
+    "amazingdesign.react-redux-mui-starter/router@0.0.9": {
         "files": [
             {
                 "relativePath": "src/bits/Router/DefaultRouteLoader.js",

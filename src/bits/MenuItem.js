@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { MenuItem as MUIMenuItem, ListItemIcon, Icon, ListItemText } from '@material-ui/core'
+import { MenuItem as MUIMenuItem, ListItemIcon, ListItemText } from '@material-ui/core'
+
+import Icon from './Icon'
 
 // eslint-disable-next-line react/prop-types
 const MenuItemInner = ({ icon, label, onClick, children, ...otherProps }, ref) => (
