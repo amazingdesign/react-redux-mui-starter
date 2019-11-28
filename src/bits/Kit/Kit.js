@@ -57,6 +57,7 @@ const Kit = (props) => {
                 )
               }
               content={
+                props.adminContent ||
                 <Router
                   history={props.history}
                   routes={props.routerRoutes}
@@ -82,6 +83,7 @@ const Kit = (props) => {
               }
               aside={props.loginAside}
               content={
+                props.loginContent ||
                 <LoginAndForgottenPassForm
                   onLoginSubmit={props.onLoginSubmit}
                   onForgottenPassSubmit={props.onForgottenPassSubmit}
@@ -128,6 +130,9 @@ Kit.propTypes = {
   languageSwitcherProps: PropTypes.object,
   loginFormProps: PropTypes.object,
   loginProps: PropTypes.object,
+
+  adminContent: PropTypes.node,
+  loginContent: PropTypes.node,
 }
 
 export default Kit
