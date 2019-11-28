@@ -103,7 +103,7 @@ Kit.propTypes = {
   footer: PropTypes.node,
   children: PropTypes.node,
   loginAside: PropTypes.node,
-  appTitle: PropTypes.string,
+  appTitle: PropTypes.node,
   routerRoutes: routesPropType,
   loginComponent: PropTypes.func,
   adminComponent: PropTypes.func,

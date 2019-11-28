@@ -54,7 +54,7 @@ const App = () => {
     { code: 'en', name: t('English') },
   ]
 
-  const routes = [
+  const groupOfRoutes = [
     {
       name: t('Home'),
       path: ['/', '/dashboard'],
@@ -74,6 +74,17 @@ const App = () => {
       icon: 'fab fa-google',
       separator: { below: true },
     },
+  ]
+
+  const routes = [
+    ...groupOfRoutes,
+    {
+      type: 'group',
+      name: 'Nested routes',
+      icon: 'fas fa-stream',
+      routes: groupOfRoutes,
+      separator: { below: true },
+    },
   ].concat(routeFromDb || [])
 
   const profileMenuRoutes = [
@@ -82,6 +93,13 @@ const App = () => {
       path: '/profile',
       component: React.lazy(() => import('./pages/profile')),
       icon: 'fas fa-users',
+      separator: { below: true },
+    },
+    {
+      type: 'group',
+      name: 'Nested routes',
+      icon: 'fas fa-stream',
+      routes: groupOfRoutes,
       separator: { below: true },
     },
     {

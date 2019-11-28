@@ -46,7 +46,7 @@ Header.propTypes = {
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   })),
-  label: PropTypes.string,
+  label: PropTypes.node,
   userAvatarSrc: PropTypes.string,
   routes: PropTypes.array,
 }

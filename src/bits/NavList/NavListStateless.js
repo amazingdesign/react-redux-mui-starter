@@ -65,6 +65,7 @@ const NavListStateless = ({
                     isNestedMenu={isNestedMenu}
                     itemProps={itemProps}
                     linkProps={linkProps}
+                    onClick={onClick}
                     toggleCollapse={toggleCollapse}
                     style={isNestedMenu ? {} : { backgroundColor: newBgColor }}
                     {...otherProps}
