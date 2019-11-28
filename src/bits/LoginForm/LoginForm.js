@@ -33,7 +33,7 @@ const LoginForm = ({ header, onSubmit, onChange, model, createValidator, customE
           name={'password'}
           errorMessage={(customErrors && customErrors['password']) || t('Can not be empty!')}
         />
-        <DefaultSubmitField />
+        <DefaultSubmitField label={t('LOGIN')}/>
       </AutoForm>
     </div>
   )

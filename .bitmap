@@ -49,7 +49,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/default-submit-field@1.0.1": {
+    "amazingdesign.react-redux-mui-starter/default-submit-field@1.0.2": {
         "files": [
             {
                 "name": "DefaultSubmitField.js",
@@ -85,7 +85,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/forgotten-pass-form@0.0.3": {
+    "amazingdesign.react-redux-mui-starter/forgotten-pass-form@0.0.4": {
         "files": [
             {
                 "relativePath": "src/bits/ForgottenPassForm/ForgottenPassForm.js",
@@ -143,7 +143,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/kit@0.0.9": {
+    "amazingdesign.react-redux-mui-starter/kit@0.0.10": {
         "files": [
             {
                 "relativePath": "src/bits/Kit/Header.js",
@@ -253,7 +253,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/login-and-forgotten-pass-form@0.0.3": {
+    "amazingdesign.react-redux-mui-starter/login-and-forgotten-pass-form@0.0.4": {
         "files": [
             {
                 "relativePath": "src/bits/LoginAndForgottenPassForm/LoginAndForgottenPassForm.js",
@@ -283,7 +283,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/login@0.0.10": {
+    "amazingdesign.react-redux-mui-starter/login@0.0.11": {
         "files": [
             {
                 "relativePath": "src/bits/LoginForm/LoginForm.js",

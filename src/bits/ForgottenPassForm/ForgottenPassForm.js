@@ -28,7 +28,7 @@ const ForgottenPassForm = ({ header, onSubmit, onChange, model, createValidator,
           name={'email'}
           errorMessage={(customErrors && customErrors['email']) || t('Must be an valid email address!')}
         />
-        <DefaultSubmitField />
+        <DefaultSubmitField label={t('REMIND')}/>
       </AutoForm>
     </div>
   )

@@ -1,12 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { Button } from '@material-ui/core'
 
-import { useTranslation } from 'react-i18next'
 
 const DefaultSubmitField = (props) => {
-  const { t } = useTranslation()
-
   return (
     <Button
       style={{ margin: '1rem 0' }}
@@ -16,11 +14,17 @@ const DefaultSubmitField = (props) => {
       fullWidth={true}
       {...props}
     >
-      {t('LOGIN')}
+      {props.label}
     </Button>
   )
 }
 
-DefaultSubmitField.propTypes = {}
+DefaultSubmitField.defaultProps = {
+  label: 'Submit',
+}
+
+DefaultSubmitField.propTypes = {
+  label: PropTypes.string.isRequired,
+}
 
 export default DefaultSubmitField
