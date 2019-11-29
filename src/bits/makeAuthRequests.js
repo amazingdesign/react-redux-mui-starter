@@ -2,6 +2,7 @@ export const makeAuthRequests = ({
   loginRequestFunction,
   refreshTokenRequestFunction,
   forgotPasswordRequestFunction,
+  resetPasswordRequestFunction,
 }) => {
   const saveTokens = (accessToken, refreshToken) => {
     localStorage.setItem('accessToken', accessToken)
@@ -46,7 +47,9 @@ export const makeAuthRequests = ({
       .then(getTokensFormResponseAndSave)
   }
 
-  const sendForgotPasswordEmail = email => forgotPasswordRequestFunction(email)
+  const sendForgotPasswordEmail = (email) => forgotPasswordRequestFunction(email)
+
+  const resetPassword = (password, data) => resetPasswordRequestFunction(password, data)
 
   const checkIfLoggedIn = () => refreshTokens()
 
@@ -56,6 +59,7 @@ export const makeAuthRequests = ({
     logIn,
     logOut,
     sendForgotPasswordEmail,
+    resetPassword,
     checkIfLoggedIn,
   }
 }

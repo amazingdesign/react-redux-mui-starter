@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 const PREFIX = '@redux-auth'
 
 export const makeReduxAuth = (
-  { logIn, logOut, checkIfLoggedIn, sendForgotPasswordEmail },
+  { logIn, logOut, checkIfLoggedIn, sendForgotPasswordEmail, resetPassword },
   { flashMessage, flashErrorMessage, flashSuccessMessage } = {},
   t = ((string) => string)
 ) => {
@@ -15,9 +15,20 @@ export const makeReduxAuth = (
   const USER_IS_LOGGING_IN = `${PREFIX}/USER_IS_LOGGING_IN`
   const USER_LOGIN_FAILURE = `${PREFIX}/USER_LOGIN_FAILURE`
 
+  const resetPasswordAsyncAction = (password, data) => (dispatch) => {
+    flashMessage && dispatch(flashMessage(t('Resetting password in progress')))
+    return resetPassword(password, data)
+      .then(() => flashSuccessMessage && dispatch(flashSuccessMessage(t('Password reset! You can login now!'))))
+      .catch(err => {
+        console.log(err, err.response.data) // eslint-disable-line no-console
+
+        flashErrorMessage && dispatch(flashErrorMessage(t('Error when resetting password! Try again!')))
+      })
+  }
+
   const sendForgotPasswordEmailAsyncAction = email => dispatch => {
     flashMessage && dispatch(flashMessage(t('Sending email in progress')))
-    sendForgotPasswordEmail(email)
+    return sendForgotPasswordEmail(email)
       .then(() => flashSuccessMessage && dispatch(flashSuccessMessage(t('E-mail with instructions was sent!'))))
       .catch(err => {
         console.log(err, err.response.data) // eslint-disable-line no-console
@@ -46,6 +57,8 @@ export const makeReduxAuth = (
       error.response.data &&
       error.response.data.message
     ) || error.message
+
+    console.log(error, message) // eslint-disable-line no-console
 
     const displayedErrors = {
       'Invalid password': t('Invalid password!'),
@@ -169,6 +182,7 @@ export const makeReduxAuth = (
   }
 
   return {
+    resetPasswordAsyncAction,
     sendForgotPasswordEmailAsyncAction,
     logInAsyncAction,
     checkIfLoggedInAsyncAction,

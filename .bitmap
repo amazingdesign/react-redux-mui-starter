@@ -306,7 +306,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/make-auth-requests@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/make-auth-requests@0.0.3": {
         "files": [
             {
                 "relativePath": "src/bits/makeAuthRequests.js",
@@ -318,7 +318,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/make-redux-auth@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/make-redux-auth@0.0.4": {
         "files": [
             {
                 "relativePath": "src/bits/makeReduxAuth.js",
