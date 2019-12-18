@@ -13,17 +13,19 @@ const LoginAndForgottenPassForm = (props) => {
 
   const [forgottenPass, setForgottenPass] = useState(false)
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const toggleForgottenPass = () => setForgottenPass(!forgottenPass)
   const onFormChange = (key, value) => {
     if (key === 'email') setEmail(value)
+    if (key === 'password') setPassword(value)
   }
 
   const commonProps = {
     customErrors: props.customErrors,
     createValidator: props.createValidator,
     onChange: onFormChange,
-    model: { email },
+    model: { email, password },
   }
 
   return (
