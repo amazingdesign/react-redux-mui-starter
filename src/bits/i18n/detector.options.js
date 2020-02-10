@@ -2,12 +2,12 @@ export const detectorOptions = {
   // order and from where user language should be detected
   order: [
     'querystring',
-    'cookie',
     'localStorage',
-    'navigator',
-    'htmlTag',
+    'cookie',
     'path',
     'subdomain',
+    'htmlTag',
+    'navigator',
   ],
 
   // keys or params to lookup language from
@@ -24,7 +24,7 @@ export const detectorOptions = {
   excludeCacheFor: ['cimode'],
 
   // optional htmlTag with lang attribute, the default is:
-  htmlTag: document.documentElement,
+  htmlTag: typeof window !== 'undefined' && window.document && window.document.documentElement,
 
   // only detect languages that are in the whitelist
   checkWhitelist: true,

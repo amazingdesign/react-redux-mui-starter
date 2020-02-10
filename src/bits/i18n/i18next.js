@@ -22,7 +22,7 @@ export const createI18nInstance = (i18nOptions) => {
       fallbackLng: false,
       backend: {
         // eslint-disable-next-line no-undef
-        loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}.json`,
+        loadPath: `${process.env.PUBLIC_URL || ''}/locales/{{lng}}.json`,
       },
       ...i18nOptions,
     })

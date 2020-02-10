@@ -108,7 +108,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/i18n@0.0.2": {
+    "amazingdesign.react-redux-mui-starter/i18n@0.0.7": {
         "files": [
             {
                 "relativePath": "src/bits/i18n/detector.options.js",
@@ -444,5 +444,5 @@
         "origin": "IMPORTED",
         "originallySharedDir": "src/internal"
     },
-    "version": "14.7.0"
+    "version": "14.7.2"
 }
