@@ -9,7 +9,7 @@ import LanguageSwitcher from '../LanguageSwitcher'
 import AvatarDropdown from '../AvatarDropdown'
 import NavList from '../NavList'
 
-const Header = ({ routes, label, languages, userAvatarSrc }) => {
+const Header = ({ i18n, routes, label, languages, userAvatarSrc }) => {
   const currentPath = useSelector(state => state.router.location.pathname)
 
   return (
@@ -21,6 +21,7 @@ const Header = ({ routes, label, languages, userAvatarSrc }) => {
         languages ?
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <LanguageSwitcher
+              i18n={i18n}
               color={'white'}
               noLabel={true}
               languages={languages}
@@ -42,6 +43,7 @@ const Header = ({ routes, label, languages, userAvatarSrc }) => {
 }
 
 Header.propTypes = {
+  i18n: PropTypes.object.isRequired,
   languages: PropTypes.arrayOf(PropTypes.exact({
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

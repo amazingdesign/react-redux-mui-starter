@@ -4,18 +4,15 @@ import PropTypes from 'prop-types'
 import { Typography } from '@material-ui/core'
 
 import { AutoForm, AutoField, ErrorField } from 'uniforms-material'
-import { useTranslation } from 'react-i18next'
 
 import createForgottenPassSchema from './forgottenPassSchema'
 import DefaultSubmitField from '../DefaultSubmitField'
 
-const ForgottenPassForm = ({ header, onSubmit, onChange, model, createValidator, customErrors }) => {
-  const { t, i18n } = useTranslation()
-
+const ForgottenPassForm = ({ i18n, header, onSubmit, onChange, model, createValidator, customErrors }) => {
   return (
     <div>
       <Typography variant="h4" gutterBottom={true}>
-        {header || t('Please login!')}
+        {header || i18n.t('Please login!')}
       </Typography>
       <AutoForm
         schema={createForgottenPassSchema({ i18n, createValidator })}
@@ -26,15 +23,16 @@ const ForgottenPassForm = ({ header, onSubmit, onChange, model, createValidator,
         <AutoField name={'email'} />
         <ErrorField
           name={'email'}
-          errorMessage={(customErrors && customErrors['email']) || t('Must be an valid email address!')}
+          errorMessage={(customErrors && customErrors['email']) || i18n.t('Must be an valid email address!')}
         />
-        <DefaultSubmitField label={t('REMIND')}/>
+        <DefaultSubmitField label={i18n.t('REMIND')} />
       </AutoForm>
     </div>
   )
 }
 
 ForgottenPassForm.propTypes = {
+  i18n: PropTypes.object.isRequired,
   header: PropTypes.string,
   model: PropTypes.object,
   customErrors: PropTypes.object,

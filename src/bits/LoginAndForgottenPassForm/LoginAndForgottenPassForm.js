@@ -3,13 +3,11 @@ import PropTypes from 'prop-types'
 
 import { Button } from '@material-ui/core'
 
-import { useTranslation } from 'react-i18next'
-
 import LoginForm from '../LoginForm'
 import ForgottenPassForm from '../ForgottenPassForm'
 
 const LoginAndForgottenPassForm = (props) => {
-  const { t } = useTranslation()
+  const t = props.i18n.t
 
   const [forgottenPass, setForgottenPass] = useState(false)
   const [email, setEmail] = useState('')
@@ -33,18 +31,20 @@ const LoginAndForgottenPassForm = (props) => {
       {
         forgottenPass ?
           <ForgottenPassForm
+            i18n={props.i18n}
             header={props.forgottenPassHeader}
             onSubmit={props.onForgottenPassSubmit}
             {...commonProps}
           />
           :
           <LoginForm
+            i18n={props.i18n}
             header={props.loginFormHeader}
             onSubmit={props.onLoginSubmit}
             {...commonProps}
           />
       }
-      <Button
+      {/* <Button
         fullWidth={true}
         onClick={toggleForgottenPass}
       >
@@ -54,12 +54,13 @@ const LoginAndForgottenPassForm = (props) => {
             :
             (props.customButtonLabels && props.customButtonLabels.forgot) || t('I forgot my password')
         }
-      </Button>
+      </Button> */}
     </div>
   )
 }
 
 LoginAndForgottenPassForm.propTypes = {
+  i18n: PropTypes.object.isRequired,
   header: PropTypes.string,
   customErrors: PropTypes.object,
   loginFormHeader: PropTypes.string,

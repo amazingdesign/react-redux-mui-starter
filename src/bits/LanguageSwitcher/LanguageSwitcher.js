@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { useTranslation } from 'react-i18next'
-
 import LanguageSelect from '../LanguageSelect'
 
-const LanguageSwitcher = ({ languages, ...restOfProps }) => {
-  const { i18n } = useTranslation()
-
+const LanguageSwitcher = ({ i18n, languages, ...restOfProps }) => {
   const [currentLang, setCurrentLang] = useState(i18n.language.slice(0, 2))
 
   const onLanguageChange = (event) => {
@@ -28,6 +24,7 @@ const LanguageSwitcher = ({ languages, ...restOfProps }) => {
 }
 
 LanguageSwitcher.propTypes = {
+  i18n: PropTypes.object.isRequired,
   languages: PropTypes.arrayOf(
     PropTypes.exact({
       code: PropTypes.string.isRequired,

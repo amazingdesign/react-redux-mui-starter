@@ -18,6 +18,8 @@ import Kit from './bits/Kit'
 import CopyrightFooter from './pieces/CopyrightFooter'
 import LoginImage from './pieces/LoginImage'
 
+// import i18n from './i18n'
+
 const theme = {
   palette: {
     primary: {
@@ -31,7 +33,7 @@ const theme = {
 
 const App = () => {
   const dispatch = useDispatch()
-  const { t } = useTranslation(null, { useSuspense: false })
+  const { t, i18n } = useTranslation()
 
   const onLoginSubmit = ({ email, password }) => dispatch(logInAsyncAction(email, password))
   const onForgottenPassSubmit = ({ email }) => dispatch(sendForgotPasswordEmailAsyncAction(email))
@@ -45,7 +47,7 @@ const App = () => {
     // eslint-disable-next-line
   }, [])
   useEffect(() => {
-    if(isUserLoggedIn) dispatch(restServices.actions.routeFromDb.get())
+    if (isUserLoggedIn) dispatch(restServices.actions.routeFromDb.get())
     // eslint-disable-next-line
   }, [isUserLoggedIn])
 
@@ -111,6 +113,8 @@ const App = () => {
 
   return (
     <Kit
+      i18n={i18n}
+
       theme={theme}
       languages={languages}
       isUserLoggedIn={isUserLoggedIn}

@@ -13,6 +13,7 @@
     "axios-auth-refresh": "^1.0.7",
     "connected-react-router": "^6.5.2",
     "history": "^4.10.1",
+    "i18next": "^19.3.2",
     "i18next-browser-languagedetector": "^4.0.1",
     "i18next-xhr-backend": "^3.2.2",
     "jsonwebtoken": "^8.5.1",
@@ -33,8 +34,7 @@
     "tinycolor2": "^1.4.1",
     "uniforms": "2.5.0",
     "uniforms-bridge-json-schema": "2.5.0",
-    "uniforms-material": "2.5.0",
-    "@bit/bit.envs.internal.babel-base-compiler": "file:./bits/internal/babel-base-compiler"
+    "uniforms-material": "2.5.0"
   },
   "scripts": {
     "start": "chmod +x ./env.sh && ./env.sh && react-scripts start",
@@ -68,9 +68,26 @@
   },
   "bit": {
     "env": {
-      "compiler": "bit.envs/compilers/react@1.0.5"
+      "compiler": "bit.envs/compilers/react@1.0.14"
     },
     "componentsDefaultDirectory": "src/bits/{name}",
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "overrides": {
+      "*": {
+        "dependencies": {
+          "@material-ui/core": "-",
+          "prop-types": "-",
+          "react": "-"
+        },
+        "peerDependencies": {
+          "@material-ui/core": "^4.9.2",
+          "@material-ui/styles": "^4.6.0",
+          "prop-types": "^15.7.2",
+          "react": "^16.12.0",
+          "react-redux": "^7.1.3",
+          "ajv": "^6.10.2"
+        }
+      }
+    }
   }
 }

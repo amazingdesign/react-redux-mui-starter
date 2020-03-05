@@ -426,23 +426,5 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "bit.envs/internal/babel-base-compiler@1.0.3": {
-        "files": [
-            {
-                "name": "index.js",
-                "relativePath": "babelBaseCompiler/index.js",
-                "test": false
-            },
-            {
-                "name": "readme.md",
-                "relativePath": "babelBaseCompiler/readme.md",
-                "test": false
-            }
-        ],
-        "mainFile": "babelBaseCompiler/index.js",
-        "rootDir": "bits/internal/babel-base-compiler",
-        "origin": "IMPORTED",
-        "originallySharedDir": "src/internal"
-    },
-    "version": "14.7.2"
+    "version": "14.7.4"
 }
