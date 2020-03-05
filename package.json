@@ -87,6 +87,21 @@
           "react-redux": "^7.1.3",
           "ajv": "^6.10.2"
         }
+      },
+      "amazingdesign.react-redux-mui-starter/i18n": {
+        "env": {
+          "compiler": "bit.envs/compilers/react@1.0.5"
+        }
+      },
+      "amazingdesign.react-redux-mui-starter/language-select": {
+        "env": {
+          "compiler": "bit.envs/compilers/react@1.0.5"
+        }
+      },
+      "amazingdesign.react-redux-mui-starter/language-switcher": {
+        "env": {
+          "compiler": "bit.envs/compilers/react@1.0.5"
+        }
       }
     }
   }
