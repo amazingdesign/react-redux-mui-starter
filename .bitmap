@@ -13,7 +13,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/avatar-dropdown@1.0.0": {
+    "amazingdesign.react-redux-mui-starter/avatar-dropdown@1.0.2": {
         "files": [
             {
                 "relativePath": "src/bits/AvatarDropdown.js",
@@ -143,7 +143,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/kit@1.0.0": {
+    "amazingdesign.react-redux-mui-starter/kit@1.0.2": {
         "files": [
             {
                 "relativePath": "src/bits/Kit/Header.js",

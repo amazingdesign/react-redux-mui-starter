@@ -31,7 +31,16 @@ const AvatarDropdown = (props) => {
             {
               React.Children.map(
                 props.children,
-                child => React.cloneElement(child, { onClick: handleClose })
+                child => React.cloneElement(
+                  child,
+                  {
+                    onClick: (...all) => {
+                      handleClose()
+
+                      child.props.onClick && child.props.onClick(...all)
+                    },
+                  }
+                )
               )
             }
           </Menu>
