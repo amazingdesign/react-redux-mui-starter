@@ -67,7 +67,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "amazingdesign.react-redux-mui-starter/display-flash-toasts@1.0.0": {
+    "amazingdesign.react-redux-mui-starter/display-flash-toasts@1.0.1": {
         "files": [
             {
                 "relativePath": "src/bits/DisplayFlashToasts/DisplayFlashToasts.js",

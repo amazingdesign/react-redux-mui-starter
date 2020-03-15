@@ -50,6 +50,7 @@ const DisplayFlashToasts = ({ flexDirection, bottom, left, top, right }) => {
               message={flash.message}
               variant={flash.isError ? 'error' : variant}
               onClose={dispatchRemoveMessage(flash.id)}
+              data-cy={`flash-toast--${flash.isError ? 'error' : variant}`}
             />
           )
         })
